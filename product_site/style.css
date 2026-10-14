@@ -1,0 +1,32 @@
+body {
+    background-color: azure;
+}
+
+h1 {
+    color: orange
+}
+
+p {
+    color:black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#IDSelector {
+    background-color: yellow;
+}
+
+.classSelector {
+    background-color: azure;
+}
+
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color:purple;
+}
+
+a:hover {
+    text-decoration: none;
+}
