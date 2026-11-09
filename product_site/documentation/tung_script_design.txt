@@ -1,0 +1,3 @@
+Script Idea: Script will be live in card example where it can change the information to the card that is called for.
+Goals: The script will dynamically display content based on the user input
+Task Breakdown: The script will ask for the card name and will display the image, text, and other information about the card.
