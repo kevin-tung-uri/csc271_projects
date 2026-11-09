@@ -140,3 +140,19 @@ li::marker {
     margin: 8px 0;
     line-height: 1.6;
 }
+
+button {
+    background-color: #ffcc00;
+    color: #121212;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #e6b800;
+}
