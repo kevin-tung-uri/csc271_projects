@@ -1,0 +1,142 @@
+
+body {
+    background-color: azure; 
+    margin: 0;
+    padding: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+}
+
+h1 {
+    color: #183b56;
+    text-align: center;
+    font-size: 32px;
+    margin-top: 35px;
+    margin-bottom: 25px;
+}
+
+body > img {
+    display: block;
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    margin: 0 auto 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+p {
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+hr {
+    width: 60%;
+    border: none;
+    height: 1px;
+    background-color: #9bbfc5;
+    margin: 25px auto;
+}
+
+ul {
+    width: fit-content;
+    margin: 25px auto;
+    padding: 15px 35px;
+    background-color: #e0f2f1;
+    border-radius: 8px;
+    line-height: 2;
+}
+
+li {
+    padding-left: 5px;
+}
+
+a:link {
+    color: #176b87;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #72528a;
+}
+
+a:hover {
+    color: #e68a28;
+    text-decoration: underline;
+}
+
+#logo {
+    width: 125px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.header {
+    padding: 3px 15px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #d4e9e9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.header a {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 5px;
+}
+
+.header a:hover {
+    color: #e68a28;
+    background-color: #c2dddd;
+    text-decoration: none;
+}
+
+.header a.active {
+    color: white;
+    background-color: #356b7c;
+}
+
+#IDSelector {
+    background-color: yellow;
+}
+
+.classSelector {
+    background-color: azure;
+}
+
+li::marker {
+    color: #356b7c;
+    font-size: 18px;
+}
+
+#card-text {
+    width: 700px;
+    margin: 20px auto;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    text-align: left;
+    background-color: #eaf6f5;
+    border-radius: 8px;
+}
+
+#card-text p {
+    text-align: left;
+    margin: 8px 0;
+    line-height: 1.6;
+}
