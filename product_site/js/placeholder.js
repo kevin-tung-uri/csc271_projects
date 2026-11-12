@@ -34,6 +34,7 @@ var officialDatabase = [
 ]
 
 //Dynamically changes card text
+//Used AI to easily know which text in the array to change.
 var currentIndex = 0;
 
 var titleHeading = document.getElementsByTagName("h1")[0].getElementsByTagName("b")[0];
