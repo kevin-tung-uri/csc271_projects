@@ -1,0 +1,1 @@
+Creating a function that would call on the styling to update the card text style each time the button is pressed.
