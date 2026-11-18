@@ -51,23 +51,50 @@ var combatStatsParagraph = allParagraphs[3];
 var yugipediaAnchor = document.querySelector("ul li:nth-child(1) a");
 var officialDatabaseAnchor = document.querySelector("ul li:nth-child(2) a");
 
+function updateCardStyling() {
+    var textLinesNodeList = document.querySelectorAll("#card-text p");
+
+    var pageParagraphs = document.querySelectorAll("body > p");
+    var attributeText = pageParagraphs[0] ? pageParagraphs[0].textContent : "";
+    var levelText = pageParagraphs[1] ? pageParagraphs[1].textContent : "";
+    var typeText = pageParagraphs[2] ? pageParagraphs[2].textContent : "";
+
+    var isNormalMonster = typeText.includes("Normal");
+    var isWaterAttribute = attributeText.includes("WATER");
+    var isHighLevel = parseInt(levelText.replace("Level: ", ""), 10) >= 8;
+
+    for (var i = 0; i < textLinesNodeList.length; i++) {
+        var currentParagraph = textLinesNodeList[i];
+        var lineText = currentParagraph.textContent;
+
+        if (isNormalMonster && isHighLevel) {
+            currentParagraph.style.color = "#8a5a00";
+            currentParagraph.style.fontWeight = "normal";
+        } else if (isWaterAttribute && lineText.includes("[Requirement]")) {
+            currentParagraph.style.color = "#005b96";
+            currentParagraph.style.fontWeight = "bold";
+        } else if (isWaterAttribute && isHighLevel && lineText.includes("[Effect]")) {
+            currentParagraph.style.color = "#a61c1c";
+            currentParagraph.style.fontWeight = "bold";
+        } else {
+            currentParagraph.style.color = "black";
+            currentParagraph.style.fontWeight = "normal";
+        }
+    }
+}
+
 function updatePageContent(index) {
     titleHeading.textContent = cardNames[index];
     attributeParagraph.textContent = cardStats[index][0];
     levelParagraph.textContent = cardStats[index][1];
     typeParagraph.textContent = cardStats[index][2];
-    
     combatStatsParagraph.innerHTML = ATKDEF[index];
 
     var textLines = cardTexts[index].slice(1);
     var formattedTextHTML = "";
     
     textLines.forEach(function(line) {
-        if (index === 0) {
-            formattedTextHTML += `<p><i>${line}</i></p>`;
-        } else {
-            formattedTextHTML += `<p>${line}</p>`;
-        }
+        formattedTextHTML += index === 0 ? `<p><i>${line}</i></p>` : `<p>${line}</p>`;
     });
     cardTextContainer.innerHTML = formattedTextHTML;
 
@@ -75,8 +102,12 @@ function updatePageContent(index) {
     cardImageElement.alt = "Image of the Yugioh Rush Duel card, " + cardNames[index];
 
     yugipediaAnchor.href = yugipediaLinks[index];
-    officialDatabaseAnchor.href = officialDatabase[index]
+    officialDatabaseAnchor.href = officialDatabase[index];
+
+    updateCardStyling();
 }
+
+updateCardStyling();
 
 
 // Go through cards
